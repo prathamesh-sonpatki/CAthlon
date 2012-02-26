@@ -17,10 +17,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author chaitanya
  */
-@WebServlet(name="eval", urlPatterns={"/eval"})
-public class eval extends HttpServlet {
-   
-    /** 
+@WebServlet(name="evalres", urlPatterns={"/evalres"})
+public class evalres extends HttpServlet {
+
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
@@ -33,26 +33,30 @@ public class eval extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         try {
-            
+
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Evaluating !</title>");
             out.println("</head>");
             out.println("<body>");
-            
+
             HttpSession session = request.getSession();
             Double Score;
              Score = (Double) session.getAttribute("Score");
-             
-           
+
+
             int bull = 1;
-          
+
            
             String ans;
-            if(session.getAttribute("bullFlag").toString().equals("1"))
-                bull = bull * 2;
-            session.setAttribute("bullFlag", null);
             
+            
+            if(true)
+            {
+                bull = bull * 2;
+                
+                
+            }
             session.setAttribute("attempt", Integer.parseInt(session.getAttribute("attempt").toString())+1);
             if(request.getParameter("options").toString().equals("a"))
                 ans = "a";
@@ -62,7 +66,7 @@ public class eval extends HttpServlet {
                 ans ="c";
             else
                 ans="d";
-            
+            out.print(ans);
             out.print(ans.equals(session.getAttribute("answer")));
             int clevel=Integer.parseInt(session.getAttribute("currentLevel").toString());
             if(clevel == 1)
@@ -74,13 +78,13 @@ public class eval extends HttpServlet {
                 session.setAttribute("q3index", Integer.parseInt(session.getAttribute("q3index").toString())+1);
             out.println(ans);
             out.println(session.getAttribute("answer"));
-             
+
             if(ans.equals(session.getAttribute("answer")))
             {
                 out.print("Correct Answer");
                 session.setAttribute("correct", Integer.parseInt(session.getAttribute("correct").toString())+1);
-               
-              
+
+
                 if(clevel == 1){
                     Score  += 2*bull;
                 session.setAttribute("q1", Integer.parseInt(session.getAttribute("q1").toString())+1);
@@ -99,15 +103,15 @@ public class eval extends HttpServlet {
                     session.setAttribute("currentLevel", clevel+1);
                     session.setAttribute("correctCount", 0);
                 }
-                
 
-                
-               
-               
+
+
+
+
             }
             else
             {
-                 
+
                   session.setAttribute("correctCount", 0);
                    if(clevel == 1){
                     Score  -= 1*bull;
@@ -122,12 +126,12 @@ public class eval extends HttpServlet {
                 }
                   if (clevel != 1){
                     session.setAttribute("currentLevel", clevel - 1);
-                    
+
                 }
             session.setAttribute("incorrect", Integer.parseInt(session.getAttribute("incorrect").toString())+1);
             }
-            
-            
+
+
                 int index = Integer.parseInt(session.getAttribute("index").toString());
                 index++;
                 session.setAttribute("index", index);
@@ -135,18 +139,18 @@ public class eval extends HttpServlet {
                 session.setAttribute("Score", Score);
                 session.setAttribute("mins",request.getParameter("mins"));
                 session.setAttribute("secs",request.getParameter("secs"));
-        
+
                   response.sendRedirect("question.jsp");
                 out.println("</body>");
             out.println("</html>");
-            
-        } finally { 
+
+        } finally {
             out.close();
         }
-    } 
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
+    /**
      * Handles the HTTP <code>GET</code> method.
      * @param request servlet request
      * @param response servlet response
@@ -157,9 +161,9 @@ public class eval extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         processRequest(request, response);
-    } 
+    }
 
-    /** 
+    /**
      * Handles the HTTP <code>POST</code> method.
      * @param request servlet request
      * @param response servlet response
@@ -172,7 +176,7 @@ public class eval extends HttpServlet {
         processRequest(request, response);
     }
 
-    /** 
+    /**
      * Returns a short description of the servlet.
      * @return a String containing servlet description
      */

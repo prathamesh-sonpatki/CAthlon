@@ -24,7 +24,7 @@ $(document).ready(function(){
 			if ((input.val() == "") || (input.val() == emptyerror)) {
 				input.addClass("needsfilled");
 				input.val(emptyerror);
-				errornotice.fadeIn(750);
+				errornotice.fadeIn(50);
 			} else {
 				input.removeClass("needsfilled");
 			}
@@ -47,7 +47,7 @@ $(document).ready(function(){
 	// Clears any fields in the form when the user clicks on them
 	$(":input").focus(function(){		
 	   if ($(this).hasClass("needsfilled") ) {
-			$(this).val("");
+			$(this).val("mihir");
 			$(this).removeClass("needsfilled");
 	   }
 	});

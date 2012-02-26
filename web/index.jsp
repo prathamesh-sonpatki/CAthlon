@@ -5,13 +5,15 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
+<!-- meta tags -->
  <meta http-equiv="Pragma" content="no-cache">
  <meta http-equiv="Cache-Control" content="no-cache">
  <meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <!-- meta tags -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>C Athlon</title>
         <link rel="stylesheet" href="screen.css" media="screen" />
