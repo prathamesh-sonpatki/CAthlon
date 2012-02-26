@@ -1,0 +1,214 @@
+#define PRODUCT(x) (x*x)
+void main(){
+    int i=7,j,k;
+    j=PRODUCT(i++);
+    k=PRODUCT(++i);
+    printf("%d%d",j,k);
+}
+---
+a)Undefined  b)49 121   c)56 90   d)56 110
+---
+ans: a
+---
+#include<stdio.h>
+a() 
+{
+	printf("Hello World");
+}
+main()
+{
+	a();
+	a(1,3);
+	a(1,2,3,4,5,6);
+}
+---
+a) Compiler Error ("undefined reference to a") b) Segmentation Error c) Hello WorldHello WorldHello World d) Hello World<garbage value><garbage value>
+---
+ans: c
+---
+#include<stdio.h>
+#define max 5
+
+int main()
+{
+	int i;
+	for(i=0;i++<=5;printf("%d,",i))
+		printf("CATHLON ");
+	return 0;
+}
+---
+a)CATHLON 1,CATHLON 2,CATHLON 3,CATHLON 4,CATHLON 5,b)CATHLON 2,CATHLON 3,CATHLON 4,CATHLON 5,CATHLON 6,c)CATHLON 1,CATHLON 2,CATHLON 3,CATHLON 4,CATHLON 5,CATHLON 6,d) Compilation Error.
+---
+ans: c
+---
+#include<stdio.h>
+int main()
+{
+  int cnt=9,t=0;
+  int n=(cnt+7)/8;
+  switch(cnt%8)
+  {
+	 case 0:do{
+	   t++;
+	   case 4:t++;
+	   case 3:t++;
+	   case 2:t++;
+	   case 1:t++;
+	 }while(--n>0);
+	 printf("%d ",t);
+  }
+  return 0;
+}
+---
+a) 7 b) 6 c) 5 d) 4
+---
+ans: b
+---
+#include <stdio.h>
+void change()
+{
+	#define change() i = 10
+}
+main()
+{
+	int i=5;
+	change();
+	printf("%d",i); 
+
+	return 0;
+}
+---
+a) 10 b) 5 c) 0 d)None
+---
+ans: a
+---
+void main()
+{
+	void *vptr;
+	int i=10;
+	int *iptr=&i;
+	vptr=iptr;
+	printf("%d",(int*)*vptr);
+}
+---
+a)10 b)address of i c)address of iptr d)None
+---
+ans: d
+---
+main()
+{
+int i=1;
+	while (i<=5)
+	{
+		printf("%d",i);
+		if (i>2)
+		goto here;
+		i++;
+	}
+}
+fun()
+{
+	here:
+	printf("PP");
+}
+---
+a) PP b) error c)12PP d)123PP
+---
+ans: b
+---
+#include<stdio.h>
+enum colors {V,I,T}
+
+main()
+{
+	int i=1;
+	switch(T)
+	{
+		case 1:  printf("GOOD");
+				 break;
+		case T:  printf("BAD");
+				 break;
+	}
+}
+---
+a) GOOD b) Error c)BAD d) None
+---
+ans: c
+---
+main( )
+{
+	int ptr[ ] = {10,20,30,40,50},j,*a;
+	for(j=0; j<5; j++)
+	{
+		printf("%d: ",*ptr); 
+		*ptr++;
+	}
+	a = ptr;
+	for(j=0; j<5; j++) 
+	{
+		printf("%d " ,*a); 
+		a++;
+	}
+}
+---
+a) 10 20 30 10 20 30 b)0 c)10 20 30 d)error
+---
+ans: d
+---
+void main()
+{
+	int i=inc(sizeof(double));
+	printf("Melange 20%d",++i);
+}
+int inc(int inc)
+{
+	inc += 2.5;
+	return(inc);
+}
+---
+a) Melange 2012 b) Melange 2011 c) error: sizeof not passes as parameter d) error:same name for function and parameter
+---
+ans: b
+---
+#include<stdio.h>
+main()
+{
+	FILE *f1;
+	char c;
+	f1=fopen("sort.c","r+");
+	while((c=fgetch(f1))!=EOF)
+		printf("%c",c);
+}
+---
+a) prints the contents of sort.c b) error: No function fgetch() c) contents of sort.c followed by infinite loop d) None
+---
+ans: c
+---
+#define FALSE -1
+#define TRUE   1
+#define NULL   0
+main() 
+{
+  if(NULL)
+	puts("NULL");
+ else if(FALSE)
+	puts("TRUE");
+else
+	puts("FALSE");
+}
+---
+a) compile error: NULL redefined b) FALSE c) NULL d) TRUE
+---
+ans: d
+---
+main()
+{
+	int a=-1;
+	+a;
+	printf("a = %d, +a = %d \\n",a,+a);
+}
+---
+a) a = -1, a = -2 b) a = -1, +a = -1 c) a = -1, +a = 1 d) a= -1, a = 0 
+---
+ans: b
+---

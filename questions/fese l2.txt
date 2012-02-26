@@ -1,0 +1,279 @@
+int main()
+{
+	float a=5.2;
+        if(a==5.2)
+	{
+		printf("Equal");
+	}
+	else if(a<5.2)
+	{
+		printf("Less than");
+	}
+	else
+	{
+		printf("Greater than");
+	}
+	return 0;
+}
+---
+a)Equal   b)Less than   c)Greater than   d)Compiler error
+---
+ans:  b
+---
+printf("ab","cd","ef");
+prints?
+---
+a)ab	b)abcdef c)abcdef followed by garbage d)none of the above
+---
+ans: a
+---
+#include<stdio.h>
+main()
+{
+	int x,y = 10;
+	x = y * NULL;
+	printf("%d",x);
+}
+---
+a)10 b)None c)0 d)(null) runtime error.
+---
+ans: b
+---
+void main()
+{
+	int a=10,b=15,c=17,d=20;
+	printf("%d%d");
+	getch();
+}
+--- 
+a)10 15  b)garbage garbage  c)Compiler Error  d)17 20
+---
+ans: d
+---
+int main()
+{
+	char c=\'\\08\';
+	printf("%d",c);
+	return 0;
+}
+prints?
+---
+a)8	  b)\'8\'   c)Compiler error   d)10   e)null
+---
+ans: a 
+---
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	char str[20] = "Melange ";
+	char str2[20],*p=&str,*q=&str2;
+
+	strcat(str,"Cathlon\');
+
+	while(*p++=*q++);
+
+	printf("%s",str2);
+	return 0;
+}
+---
+a) Compilation Error b) Melange Cathlon c) Melange d) Nothing will be printed.
+---
+ans: c
+---
+int main()
+{
+    char a;
+    printf("%d %d",sizeof(a),sizeof(\'a\'));
+    return 0;
+}
+---
+a) 1 1 b) 2 1 c) 2 2 d) None
+---
+ans: d
+---
+#include <stdio.h>
+main()
+{
+	int a = 10000;
+	char b=\'M\';
+	int i,j;
+
+	printf("%d,%d",printf("%d ",a++),printf("%c ",b++)); 
+
+	return 0;
+}
+---
+a) 10001 N 6,2 b) 10001 M 5,1 c) 10000 N 5,1 d) M 10000 6,2
+---
+ans: d
+---
+#include<stdio.h>
+void main( )
+{
+int i=2;
+int j=i+(1,2,3,4,5);
+
+printf("%d", j);
+}
+---
+a) 3   b) Error: j is undefined c)Error: Use of unknown operator  d) 7
+---
+ans: d
+---
+#include<stdio.h>
+void main( )
+{
+union a
+{
+int i;
+char ch[2];
+};
+union a u;
+u.ch[0]=3;
+u.ch[1]=2;
+printf(“%d”,u.i);
+}
+---
+a) 770 b) 515 c) 0 d) Error: u.i is uninitialized
+---
+ans: b
+---
+main()
+{
+	char str[ ]="VIT";
+	int i;
+	for(i=0;str[ i ];i++)
+	printf("%c%c%c%c ",str[ i ],*(str+i),*(i+str),i[str]);
+}
+---
+a)VVV III TTT b) VVVV IIII TTTT c) VVVVV IIIII TTTTT d) VV I TT
+---
+ans: b
+---
+main()
+{
+	int i=-1,j=-1,k=0,l=2,m;
+	m=i++&&j++&&k++||l++;
+	printf("%d %d %d %d %d",i,j,k,l,m);
+}
+---
+a) 0 0 1 3 1 b) 0 -1 0 3 0 c) 0 -1 1 2 0 d) 0 -1 0 3 1
+---
+ans: a
+---
+#include<stdio.h>
+main()
+{
+struct s
+{
+      int x=10;
+      char name[]="Pranav";
+ };
+struct s *a;
+printf("%d ",a->x);
+printf("%s",a->name);
+}
+---
+a)10 Pranav b)garbage Pranav c) 10 (null) d)error
+---
+ans: d
+---
+#include <stdio.h>
+#define a 10
+main()
+{
+#define a 50
+printf("%d",a);
+}
+---
+a) 10 b) None c) 50 d) Error
+---
+ans: c
+---
+main()
+{
+struct student 
+{
+char name[30];
+struct date dob;
+int rollno;
+}s;
+struct date
+        {	
+         int d,m,yy;
+         };
+     scanf("%s%d%d%d",s.rollno,&s.dob.d, &s.dob.m,&s.dob.yy);
+     printf("%s%d%d%d",s.rollno,s.dob.d, s.dob.m,s.dob.yy);
+}
+---
+a)error b) Input will be printed c) None d)Compiler dependent
+---
+ans: a
+---
+main()
+{
+		int i = 257;
+	      int *Ptr = &i;
+		printf("%d %d", *((char*)Ptr), *((char*)Ptr+1) );
+}
+---
+a) 0 0 b) 0 1 c) 1 1 d) 1 0
+---
+ans: c
+---
+int dim(int set[]) 
+{
+	return sizeof(set)/sizeof(int );
+}
+main()
+{
+	int set[10];
+	printf("size of set: %d", dim(set));    
+}
+---
+a) size of set: 10  b) error c) None d) size of set: 1
+---
+ans: b
+---
+main()
+{	
+	extern e;
+	printf("%d",e);
+	{
+		int e=5;
+		printf("%d",e);
+	}
+}
+---
+a)linker error b) compiler error c) 5 d)both a & b
+---
+ans: a
+---
+main()
+{
+	int i=10,j=15;
+	j = j || i++ && printf("VIT is Best !");
+	printf("%d %d", i, j);
+	return 0;
+}
+---
+a) VIT is Best !11 1 b) VIT is Best !10 1 c)11 1 d)10 1
+---
+ans: d
+---
+void main()
+{
+	static int A=5;
+	if(--A){
+		main();
+		printf("%d ",A);
+	}
+}
+---
+a) 5 4 3 2 b) 4 3 2 1 c) 0 0 1 1 d) 0 0 0 0 
+---
+ans: d
+---

@@ -1,0 +1,176 @@
+#define PRODUCT(x) (x*x)
+void main(){
+    int i=7,j,k;
+    j=PRODUCT(i++);
+    k=PRODUCT(++i);
+    printf("%d%d",j,k);
+}
+--
+a)Undefined  b)49 121   c)56 90   d)56 110
+--
+ans: a
+--
+#include<stdio.h>
+a() 
+{
+	printf("Hello World");
+}
+main()
+{
+ 	a();
+ 	a(1,3);
+ 	a(1,2,3,4,5,6);
+}
+--
+a)Compiler Error ("undefined reference to a")b) Segmentation Error c) Hello WorldHello WorldHello World d) Hello World<garbage value><garbage value>
+--
+ans: c
+--
+what will be the output of program?
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	char str[20] = "Melange ";
+	char str2[20],*p=&str,*q=&str2;
+
+	strcat(str,"Cathlon\');
+
+	while(*p++=*q++);
+
+	printf("%s",str2);
+	return 0;
+}
+--
+a) Compilation Error b) Melange Cathlon c) Melange d) Nothing will be printed.
+--
+ans: c
+--
+
+#include <stdio.h>
+main()
+{
+	int a = 10000;
+	char b=\'M\';
+	int i,j;
+
+	printf("%d,%d",printf("%d ",a++),printf("%c ",b++)); 
+
+	return 0;
+}
+--
+a) 10001 N 6,2 b) 10001 N 5,1 c) 10000 M 5,1 d) M 10000 6,2
+--
+ans: d
+--
+main()
+{
+int i=1;
+	while (i<=5)
+	{
+		printf("%d",i);
+		if (i>2)
+		goto here;
+		i++;
+	}
+}
+fun()
+{
+	here:
+	printf("PP");
+}
+--
+a) PP b) error c)12PP d)123PP
+--
+ans: b
+--
+#include<stdio.h>
+enum colors {V,I,T}
+
+main()
+{
+	int i=1;
+	switch(T)
+	{
+		case 1:  printf("GOOD");
+				 break;
+		case T:  printf("BAD");
+				 break;
+	}
+}
+--
+a) GOOD b) Error c)BAD d) None
+--
+ans: c
+--
+int dim(int set[]) 
+{
+	return sizeof(set)/sizeof(int );
+}
+main()
+{
+	int set[10];
+	printf("size of set: %d", dim(set));    
+}
+--
+a) size of set: 10  b) error c) None d) size of set: 1
+--
+ans: b
+--
+main()
+{
+	int i=10,j=15;
+	j = j || i++ && printf("VIT is Best !");
+	printf("%d %d", i, j);
+	return 0;
+}
+--
+a) VIT is Best !11 1 b) VIT is Best !10 1 c)11 1 d)10 1
+--
+ans: d
+--
+void main()
+{
+	int i=inc(sizeof(double));
+	printf("Melange 20%d",++i);
+}
+int inc(int inc)
+{
+	inc += 2.5;
+	return(inc);
+}
+--
+a) Melange 2012 b) Melange 2011 c) error: sizeof not passes as parameter d) error:same name for function and parameter
+--
+ans: b
+--
+#define FALSE -1
+#define TRUE   1
+#define NULL   0
+main() 
+{
+  if(NULL)
+	puts("NULL");
+ else if(FALSE)
+	puts("TRUE");
+else
+	puts("FALSE");
+}
+--
+a) compile error: NULL redefined b) FALSE c) NULL d) TRUE
+--
+ans: d
+--
+main()
+{
+	int a=-1;
+	+a;
+	printf("a = %d, +a = %d \\n",a,+a);
+}
+--
+a) a = -1, a = -2 b) a = -1, +a = -1 c) a = -1, +a = 1 d) a= -1, a = 0 
+--
+ans: b
+--

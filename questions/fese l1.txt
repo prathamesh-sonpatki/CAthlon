@@ -1,0 +1,165 @@
+int main()
+{
+	int i;
+	(i+8)+=1;
+	printf("/%d",i);
+	return 0;
+}
+--
+a)9	b)8   c)34   d)error
+--
+ans: d
+--
+int main()
+{
+   unsigned i=1;
+   int j=-4;
+   printf("/%u",i&j);
+   return 0;
+}
+--
+a)garbage     b)0    c)an integer that changes from    m/c to m/c    d)none of above
+--
+ans: b
+--
+#define max 5
+int main()
+{
+	int i=0;
+	i=max++;
+	printf("/%d",i++);
+	return 0;
+}
+--    
+a)5   b)6   c)Compiler Errror  d) 0
+--
+ans: c
+--
+What will be the output of the following statement ?
+printf( 3 + "goodbye");
+--
+a) goodbye b) odbye c) bye d) dbye
+--
+ans: d
+--
+void main(){
+   int a=-12;
+   a=a>>3;
+   printf("/%d",a); 
+}
+--
+a) -4 b) -3 c) -2 d) -96 
+--
+ans: c
+--
+#include<stdio.h>
+void main( )
+{
+printf(“/%d”,4//%3);
+printf(“/%d”,4//%-3);
+printf(“/%d”,-4//%3);
+printf(“/%d”,-4//%-3); 
+}
+--
+a) 1 1 -1 -1 b) 1 -1 -1 -1 c) 1 -1 -1 1 d) 1 -1 1 -1
+--
+ans: a
+--
+#include<stdio.h>
+void main( )
+{
+int a=84000;
+float b=3.4e100;
+printf(“/%d /%d”, sizeof(a),sizeof(b));
+}
+--
+a) 4 4 b) 2 4 c) 2 2 d) 4 2
+--
+ans: b
+--
+#include<stdio.h>
+void main( )
+{
+int i=3;
+switch(i)
+{
+case 1:
+printf(“hi”);
+case 2:
+printf(“hello”);
+break;
+case 3:
+continue;
+default:
+printf(“plain simple goodbye”); 
+}
+}
+--
+a) hi b) plain simple goodbye c) error d)hello
+--
+ans: c
+--
+main()
+{
+	extern int i;
+	i=10;
+printf("/%d",i);
+}
+--
+a) 0 b) 10 c) Compiler dependent d) Undefined refrence to \'_i\'
+--
+ans: d
+--
+main()
+{
+	  printf("/%x",-1<<4);
+}
+--
+a) fff0 b)0fff c)ff00 d)00ff
+--
+ans: a
+--
+main()
+{
+ char *p;
+ p="Hello";
+ printf("/%c\n",*&*p);
+}
+--
+a) (null) b) H c) error d)None
+--
+ans: b
+--
+main()
+{
+int I,j,k;
+printf("/%d",scanf("/%d /%d /%d",&I,&j,&k)); 
+ // value 10,20,30 is given as input here
+}
+--
+a) 1 b)0 c)3 d)6
+--
+ans: c
+--
+main()
+{
+  int i=0;
+
+  for (;i++;print("/%d",i)) ;
+         printf("/%d",i);
+}
+--
+a) 01 b) 0 c)Infinite loop d)1
+--
+ans: d
+--
+main()
+{	
+char str[3]="VIT";
+printf("/%s",str);
+}
+--
+a)VIT b)VIT garbage c)VIT garbage till \'\0\' d) None
+--
+ans: c
+--

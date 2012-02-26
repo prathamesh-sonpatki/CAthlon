@@ -1,0 +1,97 @@
+#include<stdio.h>
+#define max 5
+
+int main()
+{
+	int i;
+	for(i=0;i++<=5;printf("%d,",i))
+		printf("CATHLON ");
+	return 0;
+}
+--
+a) CATHLON 1,CATHLON 2,CATHLON 3,CATHLON 4,CATHLON 5, b) CATHLON 2,CATHLON 3,CATHLON 4,CATHLON 5,CATHLON 6, c) CATHLON 1,CATHLON 2,CATHLON 3,CATHLON 4,CATHLON 5,CATHLON 6, d) Compilation Error.
+--
+ans: c.
+--
+#include <stdio.h>
+void change()
+{
+	#define change() i = 10
+}
+main()
+{
+	int i=5;
+	change();
+	printf("%d",i); 
+
+	return 0;
+}
+--
+a) 10 b) 5 c) 0 d)None
+--
+ans: a
+--
+#include<stdio.h>
+
+struct str
+{
+	int a[3];
+	int b;
+}s[2] = {{1,2,3},4};
+int main()
+{
+	printf("s[0].b = %d ",s[0].b);
+	return 0;
+}
+--
+a) s[0].b = 4 b) s[0].b = 3 c) s[0].b = 0 d) None
+--
+ans: c
+--
+void main()
+{
+	void *vptr;
+	int i=10;
+	int *iptr=&i;
+	vptr=iptr;
+	printf("%d",(int*)*vptr);
+}
+--
+a)10 b)address of i c)address of iptr d)None
+--
+ans: d
+--
+main( )
+{
+  int ptr[ ] = {10,20,30,40,50},j,*a;
+  for(j=0; j<5; j++)
+    {
+             printf("%d: ",*ptr); 
+             ptr++;
+        }
+   a = ptr;
+   for(j=0; j<5; j++) 
+      {
+           printf("%d " ,*a); 
+           a++;
+      }
+ }
+--
+a) 10 20 30 10 20 30 b)0 c)10 20 30 d)error
+--
+ans: d
+--
+#include<stdio.h>
+main()
+{
+	FILE *f1;
+	char c;
+	f1=fopen("sort.c","r+");
+	while((c=fgetch(f1))!=EOF)
+		printf("%c",c);
+}
+--
+a) prints the contents of sort.c b) error: No function fgetch() c) contents of sort.c followed by infinite loop d) None
+--
+ans: c
+--
